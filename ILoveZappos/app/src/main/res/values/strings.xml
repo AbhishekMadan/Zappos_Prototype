@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">ILoveZappos</string>
+    <string name="search_button">SEARCH</string>
+    <string name="api_key">b743e26728e16b81da139182bb2094357c31d331</string>
+
+    <!--Json response fields-->
+    <string name="brandName">brandName</string>
+    <string name="thumbnailImageUrl">thumbnailImageUrl</string>
+    <string name="productId">productId</string>
+    <string name="originalPrice">originalPrice</string>
+    <string name="styleId">styleId</string>
+    <string name="colorId">colorId</string>
+    <string name="price">price</string>
+    <string name="percentOff">percentOff</string>
+    <string name="productUrl">productUrl</string>
+    <string name="productName">productName</string>
+
+    <string name="fetching_data">Looking for Products....</string>
+    <string name="result_count">totalResultCount</string>
+    <string name="info_label">General</string>
+    <string name="action_settings">Cart</string>
+    <string name="productId_label">Product Id</string>
+    <string name="colorId_label">Color Id</string>
+    <string name="styleId_lable">Style Id</string>
+    <string name="percentOff_label">Percentage Off.</string>
+    <string name="price_lable">Final Price</string>
+    <string name="cart_summary">Cart Summary</string>
+
+</resources>
