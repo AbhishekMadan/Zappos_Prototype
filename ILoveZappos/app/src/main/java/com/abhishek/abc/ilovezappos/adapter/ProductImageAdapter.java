@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso;
 public class ProductImageAdapter {
     @BindingAdapter({"android:src"})
     public static void loadThumbnail(ImageView view, String url) {
-        if(!url.equals("") || url.length()>0) {
+        if(url!=null || !url.equals("") || url.length()>0) {
             Picasso.with(view.getContext())
                     .load(url)
                     .resize(300,300)

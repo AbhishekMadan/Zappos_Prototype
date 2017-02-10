@@ -72,12 +72,14 @@ public class Product extends BaseObservable {
         notifyPropertyChanged(BR.brandName);
     }
 
+    @Bindable
     public String getThumbnailImageUrl() {
         return thumbnailImageUrl;
     }
 
     public void setThumbnailImageUrl(String thumbnailImageUrl) {
         this.thumbnailImageUrl = thumbnailImageUrl;
+        notifyPropertyChanged(BR.thumbnailImageUrl);
     }
 
     public long getProductId() {

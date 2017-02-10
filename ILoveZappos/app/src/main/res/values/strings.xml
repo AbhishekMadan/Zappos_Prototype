@@ -25,5 +25,6 @@
     <string name="percentOff_label">Percentage Off.</string>
     <string name="price_lable">Final Price</string>
     <string name="cart_summary">Cart Summary</string>
+    <string name="share">Share</string>
 
 </resources>

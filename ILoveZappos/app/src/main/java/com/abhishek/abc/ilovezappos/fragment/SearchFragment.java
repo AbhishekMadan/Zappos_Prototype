@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.abhishek.abc.ilovezappos.R;
 import com.abhishek.abc.ilovezappos.activity.MainActivity;
@@ -98,6 +99,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 Log.d(TAG, "Error Response from Server.");
+                Toast.makeText(getActivity().getApplicationContext(),"Unable to Fetch Data",Toast.LENGTH_SHORT).show();
             }
         });
     }

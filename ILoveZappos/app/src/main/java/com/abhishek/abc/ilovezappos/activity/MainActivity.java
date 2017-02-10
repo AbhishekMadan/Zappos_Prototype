@@ -3,6 +3,8 @@ package com.abhishek.abc.ilovezappos.activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +23,7 @@ import com.abhishek.abc.ilovezappos.fragment.CartDialogFragment;
 import com.abhishek.abc.ilovezappos.fragment.ProductFragment;
 import com.abhishek.abc.ilovezappos.fragment.SearchFragment;
 import com.abhishek.abc.ilovezappos.models.VController;
+import com.abhishek.abc.ilovezappos.util.UriUtils;
 
 
 public class MainActivity extends AppCompatActivity implements DataFetchSuccessCommunication {
@@ -49,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements DataFetchSuccessC
 
 
     public void showCart(View view) {
-        //Toast.makeText(getApplicationContext(),"Hello",Toast.LENGTH_SHORT).show();
         CartDialogFragment dialog = new CartDialogFragment();
         dialog.show(fragmentManager,"cart fragment");
     }
@@ -59,15 +61,15 @@ public class MainActivity extends AppCompatActivity implements DataFetchSuccessC
         actionBar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(actionBar);
 
-        //fragment
         fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        //fragment transaction for normal work-flow
         if(saveBundle==null) {
             searchFrag = new SearchFragment();
             fragmentTransaction.add(R.id.frag_container,searchFrag,"search_fragment");
             fragmentTransaction.commit();
         } else {
-            fragmentManager.findFragmentByTag("search_fragment");
+            searchFrag = fragmentManager.findFragmentByTag("search_fragment");
         }
     }
 

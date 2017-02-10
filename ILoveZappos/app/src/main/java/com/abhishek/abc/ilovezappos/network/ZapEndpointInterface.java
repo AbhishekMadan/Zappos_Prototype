@@ -15,4 +15,5 @@ public interface ZapEndpointInterface {
     //Search?term=wallet&key=b743e26728e16b81da139182bb2094357c31d33
     @GET("Search")
     public Call<ResponseBody> getSearchProduct(@Query("term") String searchWord, @Query("key") String apiKey);
+
 }

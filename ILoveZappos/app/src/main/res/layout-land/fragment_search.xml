@@ -11,8 +11,8 @@
         android:layout_centerInParent="true">
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_margin="50dp"
             android:src="@drawable/zappos_logo_transparent" />
         <LinearLayout
@@ -24,9 +24,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="#ffffff"
+                android:background="@drawable/round_corner_search"
                 android:padding="8dp"
                 android:textSize="25dp"
+                android:maxLines="1"
                 android:id="@+id/et_searchInput" />
 
             <TextView
@@ -36,8 +37,10 @@
                 android:layout_marginRight="10dp"
                 android:text="@string/search_button"
                 android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 android:padding="8dp"
-                android:background="#aaaaaa"
+                android:background="@drawable/round_corner_white"
                 android:textSize="25dp"
                 android:id="@+id/tv_searchButton" />
         </LinearLayout>
