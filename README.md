@@ -19,3 +19,6 @@
 
 ##Architecture
 ![architecture](https://cloud.githubusercontent.com/assets/17586634/22850206/ba83b1be-efba-11e6-802d-248d359e4cf1.PNG)
+
+##Video Demo
+<a href="https://youtu.be/glseCqSKHSg">![zappos](https://cloud.githubusercontent.com/assets/17586634/22850998/aaa852b2-efca-11e6-961b-6d69880ce9fc.PNG)</a>
