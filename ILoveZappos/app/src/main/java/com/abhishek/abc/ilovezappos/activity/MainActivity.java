@@ -50,6 +50,14 @@ public class MainActivity extends AppCompatActivity implements DataFetchSuccessC
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.share: sendItemAsMessage();
+                break;
+        }
+        return true;
+    }
 
     public void showCart(View view) {
         CartDialogFragment dialog = new CartDialogFragment();
@@ -112,10 +120,39 @@ public class MainActivity extends AppCompatActivity implements DataFetchSuccessC
         badgeLayout = menu.findItem(R.id.cart_settings).getActionView().findViewById(R.id.badge_layout1);
         TextView badge = (TextView) badgeLayout.findViewById(R.id.badge_notification_1);
         badge.setText(VController.getInstance().getCart().getItemCount()+"");
-        if(VController.ROTATION%2!=0 && VController.getInstance().getCart().getItemCount()==0) {
-            badgeLayout.setVisibility(View.INVISIBLE);
+        badgeLayout.setVisibility(View.VISIBLE);
+        if(VController.ROTATION%2!=0 ) {
+            menu.findItem(R.id.share).setVisible(false);
+            if(VController.getInstance().getCart().getItemCount()==0)
+                badgeLayout.setVisibility(View.INVISIBLE);
         } else {
-            badgeLayout.setVisibility(View.VISIBLE);
+            menu.findItem(R.id.share).setVisible(true);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(badgeLayout!=null && menu!=null)
+            updateCartView();
+    }
+
+    public void sendItemAsMessage() {
+        String productUri = getResources().getString(R.string.app_name)+"\n"+
+                getResources().getString(R.string.product)+
+                VController.getInstance().getProduct().getProductName()+"\n"+
+                VController.getInstance().getProduct().getBrandName()+"\n"+
+                getResources().getString(R.string.message_uri)+
+                VController.getInstance().getProduct().getProductId();
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_TEXT, productUri);
+        shareIntent.setType("text/plain");
+        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        try {
+            startActivity(shareIntent);
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(getApplicationContext(),"Cannot find Messaging Application",Toast.LENGTH_SHORT).show();
         }
     }
 }

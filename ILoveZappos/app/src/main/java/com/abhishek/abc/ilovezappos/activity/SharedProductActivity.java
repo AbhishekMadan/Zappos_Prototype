@@ -99,7 +99,7 @@ public class SharedProductActivity extends AppCompatActivity implements View.OnC
             res = new JSONObject(new String(response.body().bytes()));
             if(res.getInt(getResources().getString(R.string.result_count))>0) {
                 JSONObject jsonProd = res.getJSONArray("results").getJSONObject(0);
-                sharedProduct.setBrandName(getResources().getString(R.string.brandName));
+                sharedProduct.setBrandName(jsonProd.getString(getResources().getString(R.string.brandName)));
                 sharedProduct.setThumbnailImageUrl(jsonProd.getString(getResources().getString(R.string.thumbnailImageUrl)));
                 sharedProduct.setProductId(jsonProd.getLong(getResources().getString(R.string.productId)));
                 sharedProduct.setOriginalPrice(NumberConversionUtil.getCurrencyFromString(jsonProd.getString(getResources().getString(R.string.originalPrice))));

@@ -1,9 +1,10 @@
 <resources>
-    <string name="app_name">ILoveZappos</string>
+    <string name="app_name">I Love Zappos</string>
     <string name="search_button">SEARCH</string>
     <string name="api_key">b743e26728e16b81da139182bb2094357c31d331</string>
 
     <!--Json response fields-->
+    <string name="product">Product:</string>
     <string name="brandName">brandName</string>
     <string name="thumbnailImageUrl">thumbnailImageUrl</string>
     <string name="productId">productId</string>
@@ -26,5 +27,6 @@
     <string name="price_lable">Final Price</string>
     <string name="cart_summary">Cart Summary</string>
     <string name="share">Share</string>
+    <string name="message_uri">http://api.zappos.com/Search?term=</string>
 
 </resources>
